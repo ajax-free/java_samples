@@ -1,7 +1,7 @@
 package ru.techcoll.swords;
 
 import ru.techcoll.swords.game.Battlefield;
-import ru.techcoll.swords.game.commands.AttackCommand;
+import ru.techcoll.swords.game.actions.AttackAction;
 import ru.techcoll.swords.game.units.Archer;
 import ru.techcoll.swords.game.units.Knight;
 import ru.techcoll.swords.game.units.Unit;
@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Initial state:");
         bf.printUnits();
 
-        AttackCommand attack = new AttackCommand(bf, archer, knight);
+        AttackAction attack = new AttackAction(bf, archer, knight);
         attack.execute();
 
         System.out.println("After attack:");

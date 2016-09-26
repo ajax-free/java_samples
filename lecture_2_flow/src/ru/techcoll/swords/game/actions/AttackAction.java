@@ -1,10 +1,10 @@
-package ru.techcoll.swords.game.commands;
+package ru.techcoll.swords.game.actions;
 
 import ru.techcoll.swords.game.AttackType;
 import ru.techcoll.swords.game.Battlefield;
 import ru.techcoll.swords.game.units.Unit;
 
-public class AttackCommand extends Command {
+public class AttackAction extends Action {
 
     private Battlefield battlefield;
 
@@ -12,7 +12,7 @@ public class AttackCommand extends Command {
 
     private Unit defender;
 
-    public AttackCommand(Battlefield battlefield, Unit attacker, Unit defender) {
+    public AttackAction(Battlefield battlefield, Unit attacker, Unit defender) {
         this.battlefield = battlefield;
         this.attacker = attacker;
         this.defender = defender;
