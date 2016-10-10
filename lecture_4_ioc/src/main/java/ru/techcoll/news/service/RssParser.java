@@ -1,11 +1,11 @@
 package ru.techcoll.news.service;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import ru.techcoll.news.rss.RssChannel;
 import ru.techcoll.news.rss.RssItem;
@@ -18,7 +18,7 @@ import java.util.List;
 @Component
 public class RssParser {
 
-    private final Log log = LogFactory.getLog(getClass());
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     public RssChannel retrieveFromUrl(String url) throws Exception {
         return retrieveFromStream(getDocument(url));
