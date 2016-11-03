@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <title>Swords&Spells</title>
 </head>
 <body>
-    <div>$screen_content</div>
+    <div class="content-wrapper">
+        <div class="content">$screen_content</div>
+    </div>
 </body>
 </html>

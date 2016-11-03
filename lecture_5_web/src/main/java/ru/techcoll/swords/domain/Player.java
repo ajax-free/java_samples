@@ -1,17 +1,17 @@
 package ru.techcoll.swords.domain;
 
-import javax.validation.constraints.NotNull;
 
 public class Player {
 
-    @NotNull
     private Long id;
 
-    @NotNull
     private String name;
 
-    @NotNull
+    private String nickname;
+
     private String email;
+
+    private String password;
 
 
     public Long getId() {
@@ -30,6 +30,14 @@ public class Player {
         this.name = name;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -38,9 +46,17 @@ public class Player {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
-        return String.format("Player #%d {name=%s, email=%s", id, name, email);
+        return String.format("Player #%d {nickname=%s, email=%s", id, nickname, email);
     }
 
 }
