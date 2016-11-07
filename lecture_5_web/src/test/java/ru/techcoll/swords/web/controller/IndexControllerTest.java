@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import ru.techcoll.swords.domain.Player;
 import ru.techcoll.swords.service.PlayerService;
 
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -57,6 +57,8 @@ public class IndexControllerTest {
         )
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("./registered"));
+
+        verify(playerService, atLeastOnce()).registerPlayer("John Doe", "johnDoe", "johnDoe@game.org", "123456");
 
     }
 
