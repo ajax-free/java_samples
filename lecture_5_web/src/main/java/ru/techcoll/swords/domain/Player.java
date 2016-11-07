@@ -59,4 +59,22 @@ public class Player {
         return String.format("Player #%d {nickname=%s, email=%s", id, nickname, email);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Player player = (Player) o;
+
+        if (!id.equals(player.id)) return false;
+        return email.equals(player.email);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + email.hashCode();
+        return result;
+    }
 }

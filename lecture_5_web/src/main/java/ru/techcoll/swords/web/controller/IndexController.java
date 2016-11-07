@@ -44,12 +44,13 @@ public class IndexController {
             return "index/register";
         }
 
-        playerService.registerPlayer(
+        Player player = playerService.registerPlayer(
             form.getName(),
             form.getNickname(),
             form.getEmail(),
             form.getPassword()
         );
+        model.addAttribute("player", player);
 
         return "redirect:./registered";
     }
