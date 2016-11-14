@@ -37,7 +37,7 @@ public class IndexController {
         return "index/main";
     }
 
-    @RequestMapping(value = "main", method = RequestMethod.GET)
+    @RequestMapping(value = "profile", method = RequestMethod.GET)
     public String profile(Model model, Principal principal) {
         return "index/profile";
     }

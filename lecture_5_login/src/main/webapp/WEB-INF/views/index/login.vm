@@ -2,7 +2,7 @@
 <div class="form">
     <form name="f" action="/login" method="POST">
 
-        <div class="row">
+        <div class="row #if($error)error#end">
             <label for="emailInput">E-mail:</label>
             <input type="text" id="emailInput" name="username" value="">
             #if($error)
@@ -10,7 +10,7 @@
             #end
         </div>
 
-        <div class="row">
+        <div class="row #if($error)error#end">
             <label for="passwordInput">Password:</label>
             <input type="password" id="passwordInput" name="password">
         </div>
