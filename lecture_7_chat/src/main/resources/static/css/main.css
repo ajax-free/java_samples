@@ -1,0 +1,11 @@
+
+.input-row {
+}
+
+.input-row .field {
+    display: inline-block;
+}
+
+.input-row .field label {
+    display: block;
+}
