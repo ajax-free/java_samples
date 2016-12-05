@@ -9,7 +9,7 @@
             console.log('Connected: ' + frame);
             stompClient.subscribe('/topic/chat/general', function (data) {
                 var message = JSON.parse(data.body);
-                showChatMessage(message.name, message.text);
+                showChatMessage(message.name, message.text, message.system);
             });
         });
     }
@@ -28,8 +28,13 @@
         }));
     }
 
-    function showChatMessage(name, text) {
-        $('#output').append('<div><span class="name">' + name + '</span><span class="text">' + text + '</span></div>');
+    function showChatMessage(name, text, system) {
+        var $div = $('<div>').addClass('message')
+            .append($('<span>').addClass('name').text(name))
+            .append($('<span>').addClass('text').text(text));
+
+        if (system) $div.addClass('system');
+        $('#output').append($div);
     }
 
     $(function () {

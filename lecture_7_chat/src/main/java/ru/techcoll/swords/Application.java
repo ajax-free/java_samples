@@ -3,6 +3,7 @@ package ru.techcoll.swords;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.velocity.VelocityConfigurer;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.view.velocity.VelocityLayoutView;
 import org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver;
 
 @SpringBootApplication
+@EnableScheduling
 public class Application  extends WebMvcConfigurerAdapter {
 
     @Bean

@@ -1,8 +1,11 @@
 package ru.techcoll.swords.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Сообщение в чат от пользователя
  */
+@JsonIgnoreProperties(value = { "system" }, allowGetters = true)
 public class ChatMessage {
 
     /**
@@ -11,11 +14,24 @@ public class ChatMessage {
     private String name;
 
     /**
-     * Сообщение от пользователя
+     * Текст сообщения
      */
     private String text;
 
-    public ChatMessage() { }
+    /**
+     * Является ли сообщение системным.
+     */
+    private boolean system;
+
+    public ChatMessage() {
+        this.system = false;
+    }
+
+    public ChatMessage(String name, String text, Boolean system) {
+        this.name = name;
+        this.text = text;
+        this.system = system;
+    }
 
     public String getName() {
         return name;
@@ -33,4 +49,11 @@ public class ChatMessage {
         this.text = text;
     }
 
+    public boolean isSystem() {
+        return system;
+    }
+
+    public void setSystem(boolean system) {
+        this.system = system;
+    }
 }
